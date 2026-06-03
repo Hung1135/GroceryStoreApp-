@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="650dp"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chọn khuyến mãi"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/be_vietnam_pro_bold"
+        android:textColor="#111827"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <ImageView
+        android:id="@+id/imgClose"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <EditText
+        android:id="@+id/edtVoucher"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        tools:listitem="@layout/item_voucher"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="Nhập mã giảm giá"
+        android:paddingHorizontal="12dp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/btnApply"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+
+    <Button
+        android:id="@+id/btnApply"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:text="Áp dụng"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#2D9E6B"
+        app:layout_constraintBottom_toBottomOf="@id/edtVoucher"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/edtVoucher"/>
+
+
+    <TextView
+        android:id="@+id/txtVoucherHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Mã giảm giá đơn hàng"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#111827"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtVoucher"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvVoucher"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:listitem="@layout/item_voucher"
+        tools:itemCount="3"
+        app:layout_constraintTop_toBottomOf="@id/txtVoucherHeader"
+        app:layout_constraintBottom_toTopOf="@id/txtDiscount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/txtDiscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-20.000đ"
+        android:textColor="#2D9E6B"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@id/btnConfirm"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirm"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="Đồng ý"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:backgroundTint="#FF7A30"
+        app:cornerRadius="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
